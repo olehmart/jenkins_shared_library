@@ -11,8 +11,8 @@ pipeline {
     stages {
         stage("Init") {
             steps {
-                content = sh(script: "cat CICD.json", returnStdout: true).trim()
                 script {
+                    content = sh(script: "cat CICD.json", returnStdout: true).trim()
                     def instance = Jenkins.getInstance()
                     def provider = instance.getExtensionList('org.jenkinsci.plugins.configfiles.json.JsonConfig$JsonConfigProvider')[0]
                     def config = new org.jenkinsci.plugins.configfiles.json.JsonConfig("test", "Config for test", "test config", "${content}")
