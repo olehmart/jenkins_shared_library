@@ -1,5 +1,42 @@
 {
-  "project1": {
-    "id": "123456"
-  }
+  "helm_charts": {
+    "common": {
+      "delimiter": {
+        "digest": "@",
+        "tag": ":"
+      },
+      "deploy_branch": {
+        "develop": "dev",
+        "main": "qa"
+      },
+      "environments": {
+        "npe": {
+          "project_id": "peerless-robot-331021",
+          "gcr_repo": "gcr.io/peerless-robot-331021/",
+          "binary_authorization": {
+            "attestor": "attestor-test",
+            "attestor-project": "peerless-robot-331021",
+            "keyversion-project": "peerless-robot-331021",
+            "keyversion-location": "us-central1",
+            "keyversion-keyring": "kms-key-test",
+            "keyversion-key": "key2",
+            "keyversion": "1"
+          }
+        }
+      }
+    },
+    "java-hello-world" : {
+      "chart_name": "java-hello-world",
+      "image_name": "java-hello-world",
+      "environments": {
+        "npe": {
+          "gke_cluster": {
+            "name": "gke-cluster1",
+            "region": "us-central1"
+          }
+        }
+      }
+    }
+  },
+  "infrastructure": {}
 }
