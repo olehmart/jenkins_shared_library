@@ -1,4 +1,4 @@
-
+String content = ""
 pipeline {
     agent {
         node {
@@ -11,7 +11,7 @@ pipeline {
     stages {
         stage("Init") {
             steps {
-                def content = sh(script: "cat CICD.json", returnStdout: true).trim()
+                content = sh(script: "cat CICD.json", returnStdout: true).trim()
                 script {
                     def instance = Jenkins.getInstance()
                     def provider = instance.getExtensionList('org.jenkinsci.plugins.configfiles.json.JsonConfig$JsonConfigProvider')[0]
