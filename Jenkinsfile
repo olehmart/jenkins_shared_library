@@ -12,7 +12,8 @@ pipeline {
         stage("Init") {
             steps {
                 script {
-                    org.jenkinsci.plugins.configfiles.GlobalConfigFiles.newConfig("test", "test", "test", "test")
+                    def gcf = org.jenkinsci.plugins.configfiles.GlobalConfigFiles.get()
+                    def deploymentFile = gcf.newConfig("test", "test", "test", "test")
                 }
             }
         }
