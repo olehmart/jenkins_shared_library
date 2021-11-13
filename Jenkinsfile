@@ -14,7 +14,7 @@ pipeline {
                 sh "ls -l"
                 script {
                     def instance = Jenkins.getInstance()
-                    String fileContents = new File('./CICD.json').text
+                    String fileContents = new File('CICD.json').text
                     def provider = instance.getExtensionList('org.jenkinsci.plugins.configfiles.json.JsonConfig$JsonConfigProvider')[0]
                     def config = new org.jenkinsci.plugins.configfiles.json.JsonConfig("test", "Config for test", "test config", "${fileContents}")
                     provider.save(config)
