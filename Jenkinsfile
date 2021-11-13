@@ -11,9 +11,9 @@ pipeline {
     stages {
         stage("Init") {
             steps {
+                sh "ls -l"
                 script {
                     def instance = Jenkins.getInstance()
-                    sh "ls -l"
                     String fileContents = new File('./CICD.json').text
                     def provider = instance.getExtensionList('org.jenkinsci.plugins.configfiles.json.JsonConfig$JsonConfigProvider')[0]
                     def config = new org.jenkinsci.plugins.configfiles.json.JsonConfig("test", "Config for test", "test config", "${fileContents}")
