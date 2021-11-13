@@ -12,8 +12,10 @@ pipeline {
         stage("Init") {
             steps {
                 script {
-                    def gcf = org.jenkinsci.plugins.configfiles.GlobalConfigFiles.get()
-                    def deploymentFile = gcf.newConfig("test", "test", "test", "test")
+                    def instance = Jenkins.getInstance()
+                    def provider = instance.getExtensionList('org.jenkinsci.plugins.configfiles.json.JsonConfig$JsonConfigProvider')[0]
+                    def config = new org.jenkinsci.plugins.configfiles.json.JsonConfig("test", "Config for ${BRANCH_NAME}", "test config", "{content}")
+                    provider.save(config)
                 }
             }
         }
