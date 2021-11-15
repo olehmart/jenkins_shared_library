@@ -36,6 +36,17 @@
           }
         }
       }
+    },
+    "init" : {
+      "chart_name": "init",
+      "environments": {
+        "npe": {
+          "gke_cluster": {
+            "name": "gke-cluster1",
+            "region": "us-central1"
+          }
+        }
+      }
     }
   },
   "infrastructure": {}
