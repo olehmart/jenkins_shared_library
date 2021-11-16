@@ -25,10 +25,15 @@ def install(Map args, Boolean dry_run=true){
         namespace = ""
     }
     if (args.containsKey("values")) {
-        for (value in args.values) {
-            values_map.add("$value.key=$value.value")
+        if (args.values) {
+            for (value in args.values) {
+                values_map.add("$value.key=$value.value")
+            }
+            values = "--set ${values_map.join(',')}"
         }
-        values = "--set ${values_map.join(',')}"
+        else {
+            values = ""
+        }
     }
     else {
         values = ""
