@@ -1,10 +1,6 @@
 {
   "helm_charts": {
     "common": {
-      "delimiter": {
-        "digest": "@",
-        "tag": ":"
-      },
       "deploy_branch": {
         "develop": "dev",
         "main": "qa"
