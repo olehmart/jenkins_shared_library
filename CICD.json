@@ -30,6 +30,7 @@
       "image_name": "java-hello-world",
       "environments": {
         "dev": {
+          "values_file" : "dev-values.yaml",
           "gke_cluster": {
             "name": "gke-cluster1",
             "region": "us-central1"
@@ -41,6 +42,7 @@
       "chart_name": "init",
       "environments": {
         "dev": {
+          "values_file" : null,
           "gke_cluster": {
             "name": "gke-cluster1",
             "region": "us-central1"
