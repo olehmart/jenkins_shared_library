@@ -2,6 +2,7 @@ def install(Map args, Boolean dry_run=true){
     def values_map = []
     String values, values_file, namespace, dry_run_parameter = "--dry-run"
     if (!dry_run){
+        println("DRY_RUN: " + dry_run)
         dry_run_parameter = ""
     }
     if (args.containsKey("values_file")) {
