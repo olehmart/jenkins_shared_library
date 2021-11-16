@@ -5,6 +5,7 @@ def install(Map args, Boolean dry_run=true){
         println("DRY_RUN DISABLED!")
         dry_run_parameter = ""
     }
+    println(dry_run)
     println("DRY_RUN_PARAMETER:  " + dry_run_parameter)
     if (args.containsKey("values_file")) {
         if (args.values_file) {
