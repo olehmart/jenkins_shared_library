@@ -9,7 +9,7 @@ def install(Map args, Boolean dry_run=true){
     println("DRY_RUN_PARAMETER:  " + dry_run_parameter)
     if (args.containsKey("values_file")) {
         if (args.values_file) {
-            values_file = " -f ${args.values_file}"
+            values_file = " -f ${args.chart_path}/${args.values_file}"
         }
         else {
             values_file = ""
