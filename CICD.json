@@ -47,5 +47,15 @@
       }
     }
   },
-  "infrastructure": {}
+  "infrastructure": {
+    "dev": {
+      "project_id": "peerless-robot-331021",
+      "gke_clusters": [
+        {
+          "name": "gke-cluster1",
+          "region": "us-central1"
+        }
+      ]
+    }
+  }
 }
