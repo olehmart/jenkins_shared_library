@@ -54,6 +54,14 @@
         {
           "name": "gke-cluster1",
           "region": "us-central1"
+        },
+        {
+          "name": "gke-cluster2",
+          "region": "us-east1"
+        },
+        {
+          "name": "gke-cluster3",
+          "region": "us-west1"
         }
       ]
     }
